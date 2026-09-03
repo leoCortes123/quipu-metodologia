@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(try { $r = Invoke-WebRequest -Uri http://127.0.0.1:8001/health -TimeoutSec 3 -UseBasicParsing; $r.StatusCode; $r.Content } catch { \"API DOWN: \" + $_.Exception.Message })",
+      "PowerShell(Get-NetTCPConnection *)",
+      "PowerShell(Get-CimInstance *)",
+      "Bash(npx prettier *)",
+      "Bash(pnpm run *)",
+      "Bash(netstat -ano)",
+      "Skill(artifact-design)",
+      "Bash(git --version)",
+      "Bash(npm --version)",
+      "Read(//usr/lib/**)",
+      "Read(//mnt/datos/Programacion/**)",
+      "Bash(rm -rf /home/leonardo/.claude/projects/-mnt-datos-Programacion-QUIPU/memory/)",
+      "Read(//home/leonardo/.claude/projects/-mnt-datos-Programacion-QUIPU/**)",
+      "Bash(grep -nE \"^#{1,3} \" DATABASE_REFERENCE.md)",
+      "Bash(grep -oE \"^\\\\| \\\\`?[a-z_]+\\\\`? \" DATABASE_REFERENCE.md)",
+      "Bash(exit 1)",
+      "Bash(awk '{a[NR]=$1; s+=$1} END {print \"count=\"NR; print \"bytes_total=\"s; print \"min=\"a[1]; print \"median=\"a[int\\(\\(NR+1\\)/2\\)]; print \"p90=\"a[int\\(NR*0.9\\)]; print \"max=\"a[NR]; print \"mean=\"int\\(s/NR\\)}')",
+      "Bash(awk '{a[NR]=$1;s+=$1} END {print \"cards=\"NR\" bytes=\"s\" median=\"a[int\\(\\(NR+1\\)/2\\)]\" max=\"a[NR]}')",
+      "Bash(grep -rhA6 'CONSTRAINT ck_bac_met CHECK\\\\|CONSTRAINT ck_block_verified CHECK\\\\|CONSTRAINT ck_cds_entity CHECK' .)",
+      "Bash(awk '{s+=$1} END {print \"bytes=\"s}')",
+      "Bash(awk '{s+=$1; n++; if\\($1>max\\)max=$1; if\\(min==0||$1<min\\)min=$1} END {printf \"n=%d  media=%d  min=%d  max=%d  total=%d\\\\n\", n, s/n, min, max, s}')",
+      "Bash(python3 -c \"import tiktoken; print\\('tiktoken OK'\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 *)",
+      "Bash(awk '/^## /{if\\(name\\)printf \"%-58s %5d líneas %7d B\\\\n\", name, NR-start, bytes; name=$0; start=NR; bytes=0} {bytes+=length\\($0\\)+1} END{printf \"%-58s %5d líneas %7d B\\\\n\", name, NR-start, bytes}' GUIA_AGENTE.md)",
+      "Bash(xargs -I{} basename {} .php)",
+      "Bash(grep -v \"^$\")",
+      "Bash(lsb_release -a)",
+      "Bash(dpkg -l)",
+      "Bash(docker volume *)",
+      "Bash(docker network *)",
+      "Bash(docker system *)",
+      "mcp__quipu__get_ready_blocks",
+      "mcp__quipu__record_knowledge",
+      "Bash(mkdir *)",
+      "Artifact",
+      "mcp__quipu__get_my_tasks",
+      "mcp__quipu__get_project_analysis",
+      "mcp__quipu__get_block_detail",
+      "mcp__quipu__claim_block",
+      "Bash(git -C /mnt/datos/Programacion/wt/f1-t03-lectura status --porcelain)",
+      "Bash(./sistema-a/bin/estado.sh)"
+    ],
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": [
+      "/mnt/datos/Programacion/wt"
+    ]
+  }
+}

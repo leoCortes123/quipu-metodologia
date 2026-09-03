@@ -1,0 +1,73 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@ganimalqudhaifi/opencode-chain-prompt"],
+  "agent": {
+    "ui-builder": {
+      "mode": "subagent",
+      "description": "Implementa cambios de UI de forma rápida y precisa.",
+      "model": "opencode/x-preview-f-free",
+      "prompt": "Eres un experto en desarrollo de UI. Implementas cambios siguiendo las convenciones del proyecto y el sistema de diseño. Tu respuesta debe ser el código modificado y una breve explicación. Siempre mantén la consistencia visual y funcional con el resto de la aplicación.",
+      "context": {
+        "repo": false,
+        "files": "prompt-only",
+        "maxTokens": 3000
+      },
+      "temperature": 0.3
+    },
+    "ui-reviewer": {
+      "mode": "subagent",
+      "description": "Revisa el código de UI en busca de errores y mejores prácticas.",
+      "model": "opencode/x-preview-f-free",
+      "reasoningEffort": "low",
+      "prompt": "Eres un revisor de código de UI estricto. Tu tarea es encontrar y corregir errores de accesibilidad, rendimiento o buenas prácticas en el código que se te proporciona. Verifica roles ARIA, etiquetas, contraste, selectores CSS eficientes, keys en listas de React y tipos de TypeScript. Usa un tono directo y solo modifica lo necesario para corregir problemas.",
+      "permission": { "edit": "allow" },
+      "context": {
+        "repo": false,
+        "files": "prompt-only",
+        "maxTokens": 2000
+      },
+      "temperature": 0.1
+    },
+    "codebase-explorer": {
+      "mode": "subagent",
+      "description": "Explora el código para encontrar información sobre componentes, estilos o estructura.",
+      "model": "opencode/x-preview-f-free",
+      "reasoningEffort": "low",
+      "prompt": "Eres un explorador de código. Tu objetivo es buscar información sobre la estructura del proyecto, componentes existentes, estilos y temas. Proporciona rutas de archivo y fragmentos de código relevantes. Sé conciso y enfócate solo en lo que se te pide.",
+      "permission": { "edit": "deny" },
+      "context": {
+        "repo": true,
+        "files": "all",
+        "maxTokens": 4000
+      }
+    }
+  },
+  "mcp": {
+    "quipu-db": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@henkey/postgres-mcp-server",
+        "-cs",
+        "postgresql://quipu:quipu@localhost:5436/quipu"
+      ],
+      "enabled": true
+    },
+    "context7": {
+      "type": "local",
+      "command": ["npx", "-y", "@upstash/context7-mcp"],
+      "enabled": true
+    },
+    "quipu": {
+      "type": "local",
+      "command": ["docker", "compose", "exec", "-T", "api", "php", "artisan", "mcp:start", "quipu"],
+      "enabled": true
+    },
+    "codebase-memory": {
+      "type": "local",
+      "command": ["npx", "-y", "codebase-memory-mcp"],
+      "enabled": true
+    }
+  }
+}

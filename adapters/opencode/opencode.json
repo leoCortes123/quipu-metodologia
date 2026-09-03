@@ -1,0 +1,43 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CONTEXTO-PROYECTO.md"
+  ],
+  "model": "deepseek/deepseek-v4-flash",
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "docker compose *": "allow",
+      "bin/*": "allow",
+      "./bin/*": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git rev-parse*": "allow",
+      "git worktree list*": "allow",
+      "ls*": "allow",
+      "cat *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "sed -n *": "allow",
+      "wc *": "allow",
+      "rg *": "allow",
+      "grep *": "allow",
+      "npm *": "deny",
+      "npx *": "deny",
+      "yarn *": "deny",
+      "php *": "deny",
+      "composer *": "deny",
+      "pnpm *": "deny",
+      "rm -rf*": "ask",
+      "git push*": "deny",
+      "git reset --hard*": "deny"
+    },
+    "webfetch": "ask",
+    "websearch": "ask",
+    "external_directory": "ask"
+  }
+}
