@@ -42,6 +42,7 @@ plan.
 | `scripts/` | herramental: ledger, verificación, modo sombra, métricas |
 | `contexto/` | contexto de producto que las tareas inyectan (no es normativa) |
 | `adapters/` | perfiles opcionales por harness — sólo si usas ese harness |
+| `decisiones/` | por qué se trabaja así — `DEC-M<n>-*.md` |
 | `archivo/` | histórico, no gobierna nada |
 
 ## Dónde escriben los scripts
