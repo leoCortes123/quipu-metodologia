@@ -14,7 +14,7 @@ Cualquier otra cosa (narrativa, "debería pasar", captura sin comando) **no es e
 `QUIPU_VERIF_DETERMINISTA` tiene tres estados: `0` (apagado, por omisión — el Verificador
 hace estos pasos a mano), `sombra` (el script observa y **no decide**: el Verificador hace
 el protocolo completo igual y el Orquestador registra la comparación con
-`bin/sombra.sh`) y `1` (vinculante). El paso de `sombra` a `1` exige 5 tareas
+`metodologia/scripts/sombra.sh`) y `1` (vinculante). El paso de `sombra` a `1` exige 5 tareas
 vivas consecutivas coincidiendo y ningún falso PASA, y **lo autoriza el humano**, no la
 flota. Un solo falso PASA —el script aprueba y el juez rechaza por un hecho mecánico—
 aborta el despliegue y devuelve el flag a 0.

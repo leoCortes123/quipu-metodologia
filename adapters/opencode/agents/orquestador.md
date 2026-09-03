@@ -26,8 +26,8 @@ Ciclo por tarea:
    tarea: estado, commits, hallazgos abiertos.
 
 Reglas:
-- Para saber por dónde va la fase, ejecuta `bin/estado.sh`: es la proyección
-  compacta del ledger (~3 KB). **No leas `.session/progress.json` entero** — son
+- Para saber por dónde va la fase, ejecuta `metodologia/scripts/estado.sh`: es la proyección
+  compacta del ledger (~3 KB). **No leas `ejecucion/sesiones/progress.json` entero** — son
   ~125 KB de historial que crecen sin techo y se reenvían en cada turno. Cuando necesites el
   detalle de UNA tarea: `bin/estado.sh --tarea F1/T02`; lo abierto: `--abierto`.
   Escribir el checkpoint sigue igual: al ledger, append-only.

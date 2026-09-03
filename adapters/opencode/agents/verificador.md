@@ -65,7 +65,7 @@ fuera de alcance, mensaje de commit distinto) di `mecanico`; si rechazas porque 
 GWT no se cumple, di `semantico`. Que el script diga PASA y tú rechaces por semántica **no
 es un fallo del script**: PASA nunca aprobó nada. Un falso PASA mecánico sí aborta el
 despliegue. Tú no escribes el registro —no tienes permiso de edición—: lo hace el
-Orquestador con `bin/sombra.sh` a partir de tu checkpoint.
+Orquestador con `metodologia/scripts/sombra.sh` a partir de tu checkpoint.
 
 **`=1`** (vinculante, sólo tras 5/5 en sombra):
 

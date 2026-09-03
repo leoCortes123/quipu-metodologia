@@ -65,7 +65,7 @@ docker compose exec -T -e COMPOSER_PROCESS_TIMEOUT=1800 api composer ci > /tmp/c
 El comando es el mismo y el `exit code` es evidencia igual de válida (`metodologia/normativa/VALIDACION.md`).
 Nunca reportes verde sin haber leído el final del log.
 
-**Tu mensaje final ES el checkpoint.** No escribes en `.session/progress.json` — eso lo hace
+**Tu mensaje final ES el checkpoint.** No escribes en `ejecucion/sesiones/progress.json` — eso lo hace
 el Orquestador. Devuelve como último mensaje el JSON exacto de `metodologia/normativa/HANDOFF.md`
 (`tarea`, `rol: "ejecutor"`, `worktree`, `estado`, `commits`, `archivos_tocados`,
 `decisiones_tomadas`, `evidencia`, `abierto`, `hallazgos_no_aplicados`, `siguiente_paso`),

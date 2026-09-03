@@ -2,11 +2,11 @@
 
 Toda sesión (Ejecutor, Verificador, Orquestador) escribe su checkpoint **ANTES de
 terminar** — nunca después, nunca "si hay tiempo". Destino: mensaje final de la sesión,
-en el JSON de abajo; el Orquestador lo persiste en `.session/progress.json` del repo
+en el JSON de abajo; el Orquestador lo persiste en `ejecucion/sesiones/progress.json` del repo
 (append-only: una entrada por tarea/sesión).
 
 **El contrato es mecánico, no una convención** (idea 3 del README del producto). Se valida con
-`bin/checkpoint.sh`, y el Orquestador anexa con `checkpoint.sh anexar`, que
+`metodologia/scripts/checkpoint.sh`, y el Orquestador anexa con `checkpoint.sh anexar`, que
 rechaza lo que no cumpla. Una entrada inválida no está desaconsejada: no entra.
 
 ```json
@@ -103,7 +103,7 @@ eso se decide y se añade aquí, no se normaliza a mano en cada script.
 - El Verificador reconstruye estado desde checkpoint + git. Jamás desde narrativa.
 - `estado: hecha` sin evidencia referenciada es inválido (`metodologia/normativa/VALIDACION.md`).
 - Un hallazgo no aplicado que parezca clase C → también en `abierto[]`.
-- El estado de la fase se lee con `bin/estado.sh`, no leyendo el ledger entero.
+- El estado de la fase se lee con `metodologia/scripts/estado.sh`, no leyendo el ledger entero.
 
 ## Deuda: las 41 entradas anteriores a este contrato
 

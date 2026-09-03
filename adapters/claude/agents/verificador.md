@@ -48,4 +48,4 @@ Un CI abortado por timeout NO es un CI rojo ni un CI verde: es una medición fal
 
 **Tu mensaje final ES el checkpoint.** Devuelve el JSON de `metodologia/normativa/HANDOFF.md` con
 `rol: "verificador"` y el veredicto criterio por criterio, sin prosa alrededor. El
-Orquestador lo persiste en `.session/progress.json`.
+Orquestador lo persiste en `ejecucion/sesiones/progress.json`.

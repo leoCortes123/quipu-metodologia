@@ -9,7 +9,7 @@ tocar la capa genérica.
 | Perfil | Qué es | Origen |
 |---|---|---|
 | `claude/` | agentes, comandos `/opsx:*`, skills y `settings.json` para Claude Code | ex-`sistema-a/.claude/` verbatim |
-| `opencode/` | agentes, comandos `/opsx-*`, skills, `opencode.json`, `chains/ui-change.md` para OpenCode | ex-`sistema-a/.opencode/` + `opencode*.json` verbatim |
+| `opencode/` | agentes, comandos `/opsx-*`, skills, `opencode.json`, `opencode/chains/ui-change.md` para OpenCode | ex-`sistema-a/.opencode/` + `opencode*.json` verbatim |
 
 Notas:
 - `claude/settings.local.json` es configuración personal de máquina (rutas absolutas,
